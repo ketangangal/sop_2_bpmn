@@ -1,0 +1,24 @@
+[project]
+name = "sop-to-bpmn"
+version = "1.0.0"
+description = "Converts SOP documents (.docx) to BPMN 2.0 XML using LLM-powered analysis"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.104.0",
+    "uvicorn[standard]>=0.24.0",
+    "python-docx>=1.1.0",
+    "python-multipart>=0.0.6",
+    "openai>=1.0.0",
+    "pydantic-settings>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4.0",
+    "pytest-asyncio>=0.23.0",
+    "httpx>=0.25.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"
